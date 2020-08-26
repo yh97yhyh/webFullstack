@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //지역변수 전역변수
+    // function sum(x) { //parameter 매개변수
+    //   let y = 50;
+    //   return x + y;
+    // }
+    // document.write(sum(10)); //argument 전달인자
+    // document.write('<br>');
+
+    // 함수 선언문
+    // document.write(sum(10,20));
+    // document.write('<br>');
+    // function sum(x, y) {
+    //   return x + y;
+    // }
+
+    //함수 표현식
+    let sumXY = function sum(x, y) {
+      return x + y;
+    };
+    let sumXYcopy = sumXY;
+
+
+    document.write(sumXYcopy(10, 20), '<br>');
+
+    //콜백함수
+    function sum(x, y, c) {
+      c(x + y);
+      return x + y;
+    }
+
+    function documentWrite(s) {
+      document.write('콜백함수', s);
+    }
+
+    sum(10, 20, documentWrite);
+
+
+
+    // Arrow function
+    // let sumArrowFunction = (x, y) => x + y;
+    // document.write(sum(10, 20));
+    // document.write('<br>');
+    // document.write(sumArrowFunction(10, 20));
+  </script>
+</body>
+</html>

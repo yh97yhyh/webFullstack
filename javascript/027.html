@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button onclick="renderTable(jsonData)">데이터 호출!</button>
+  <table id = "renderingDataTable">
+    <thead>
+      <tr>
+        <th onclick="sort('_id')">_id</th>
+        <th onclick="sort('name')">name</th>
+        <th onclick="sort('age')">age</th>
+        <th onclick="sort('eyeColor')">eyeColor</th>
+        <th onclick="sort('gender')">gender</th>
+        <th onclick="sort('email')">email</th>
+        <th onclick="sort('phone')">phone</th>
+      </tr>
+    </thead>
+  </table>
+  <script>
+    // tableRender
+    var jsonData = [
+  {
+    "_id": "5f363da200558b2503f95ee1",
+    "index": 0,
+    "guid": "4043f12f-fcea-46dd-a6c1-3141743f32c9",
+    "isActive": true,
+    "balance": "$1,965.63",
+    "picture": "http://placehold.it/32x32",
+    "age": 25,
+    "eyeColor": "green",
+    "name": "Marie Moses",
+    "gender": "female",
+    "company": "CINASTER",
+    "email": "mariemoses@cinaster.com",
+    "phone": {'지역번호' : 064, '전화번호' : 1112222},
+    "address": "469 Hill Street, Davenport, Palau, 6169",
+    "about": "Ut exercitation reprehenderit proident Lorem officia deserunt amet labore est do. Dolore velit amet ipsum nostrud ad do sit ex proident consectetur nulla commodo. Commodo amet reprehenderit irure aute consequat. Proident officia duis labore dolore Lorem deserunt duis et ut labore.\r\n",
+    "registered": "2019-07-16T02:58:09 -09:00",
+    "latitude": 73.636093,
+    "longitude": -74.961029,
+    "tags": [
+      "pariatur",
+      "commodo",
+      "ea",
+      "consectetur",
+      "mollit",
+      "voluptate",
+      "veniam"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Juanita Bolton"
+      },
+      {
+        "id": 1,
+        "name": "Carver Mason"
+      },
+      {
+        "id": 2,
+        "name": "Tina Sosa"
+      }
+    ],
+    "greeting": "Hello, Marie Moses! You have 5 unread messages.",
+    "favoriteFruit": "strawberry"
+  },
+  {
+    "_id": "5f363da270ab567c8bbf899b",
+    "index": 1,
+    "guid": "49852d6b-1780-41de-aced-b281a37730ee",
+    "isActive": true,
+    "balance": "$1,147.49",
+    "picture": "http://placehold.it/32x32",
+    "age": 27,
+    "eyeColor": "blue",
+    "name": "Anastasia Evans",
+    "gender": "female",
+    "company": "DYMI",
+    "email": "anastasiaevans@dymi.com",
+    "phone": "+1 (968) 541-3749",
+    "address": "191 Dikeman Street, Nettie, Marshall Islands, 1232",
+    "about": "Aliquip proident nostrud proident deserunt ullamco veniam ut amet. Eu sunt nulla adipisicing tempor reprehenderit duis elit dolore tempor. Commodo commodo non commodo in eu. Anim pariatur incididunt quis voluptate non do.\r\n",
+    "registered": "2015-05-13T09:45:57 -09:00",
+    "latitude": 8.686484,
+    "longitude": 6.338306,
+    "tags": [
+      "qui",
+      "reprehenderit",
+      "in",
+      "sunt",
+      "magna",
+      "Lorem",
+      "velit"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Amanda Phelps"
+      },
+      {
+        "id": 1,
+        "name": "Tillman Nielsen"
+      },
+      {
+        "id": 2,
+        "name": "Cathryn Hooper"
+      }
+    ],
+    "greeting": "Hello, Anastasia Evans! You have 10 unread messages.",
+    "favoriteFruit": "apple"
+  },
+  {
+    "_id": "5f363da24cd7ffb9d2f9ebea",
+    "index": 2,
+    "guid": "67403f87-a9e3-4c8e-9ea9-20632a58f0d7",
+    "isActive": true,
+    "balance": "$3,012.84",
+    "picture": "http://placehold.it/32x32",
+    "age": 34,
+    "eyeColor": "brown",
+    "name": "Newton Wynn",
+    "gender": "male",
+    "company": "XPLOR",
+    "email": "newtonwynn@xplor.com",
+    "phone": "+1 (868) 422-2727",
+    "address": "822 Pershing Loop, Riverton, Wisconsin, 3523",
+    "about": "Ut excepteur do ea officia ad excepteur sunt in officia. Nostrud culpa aute aute nostrud laboris exercitation. Tempor duis reprehenderit nulla sit.\r\n",
+    "registered": "2014-02-07T03:11:52 -09:00",
+    "latitude": 75.035335,
+    "longitude": 129.37591,
+    "tags": [
+      "minim",
+      "consequat",
+      "nulla",
+      "anim",
+      "aliqua",
+      "qui",
+      "eu"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Mari Hunter"
+      },
+      {
+        "id": 1,
+        "name": "Bridges Ellison"
+      },
+      {
+        "id": 2,
+        "name": "Francis Bridges"
+      }
+    ],
+    "greeting": "Hello, Newton Wynn! You have 1 unread messages.",
+    "favoriteFruit": "strawberry"
+  },
+  {
+    "_id": "5f363da26aa6e5d02ebe34b7",
+    "index": 3,
+    "guid": "58965ab4-8e99-4428-a9fc-1d90ced0323f",
+    "isActive": true,
+    "balance": "$3,570.63",
+    "picture": "http://placehold.it/32x32",
+    "age": 31,
+    "eyeColor": "green",
+    "name": "Maude Trevino",
+    "gender": "female",
+    "company": "TURNABOUT",
+    "email": "maudetrevino@turnabout.com",
+    "phone": "+1 (836) 433-3281",
+    "address": "892 Gain Court, Mayfair, New Mexico, 9706",
+    "about": "In nostrud laborum irure amet eiusmod irure consequat tempor velit eu est velit qui in. Voluptate qui in nulla ex incididunt nulla ea eu ipsum ea incididunt excepteur. Ipsum officia irure occaecat ex mollit ullamco excepteur veniam est. Mollit adipisicing amet nisi in cupidatat aliqua aliqua amet dolor. Esse nulla et fugiat pariatur deserunt minim eiusmod commodo voluptate id do est nisi amet.\r\n",
+    "registered": "2018-06-24T01:45:12 -09:00",
+    "latitude": -14.288003,
+    "longitude": -147.994861,
+    "tags": [
+      "laborum",
+      "minim",
+      "commodo",
+      "cupidatat",
+      "pariatur",
+      "fugiat",
+      "ex"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Roxanne Hutchinson"
+      },
+      {
+        "id": 1,
+        "name": "Hodge Estrada"
+      },
+      {
+        "id": 2,
+        "name": "Noemi Fisher"
+      }
+    ],
+    "greeting": "Hello, Maude Trevino! You have 4 unread messages.",
+    "favoriteFruit": "apple"
+  },
+  {
+    "_id": "5f363da2db49ff8739e269b0",
+    "index": 4,
+    "guid": "a8c8a698-0c56-46ed-bb31-5b6732f493a1",
+    "isActive": true,
+    "balance": "$3,828.57",
+    "picture": "http://placehold.it/32x32",
+    "age": 27,
+    "eyeColor": "green",
+    "name": "June Banks",
+    "gender": "female",
+    "company": "ORBALIX",
+    "email": "junebanks@orbalix.com",
+    "phone": "+1 (850) 427-3657",
+    "address": "468 Dank Court, Belmont, Colorado, 8909",
+    "about": "Laborum consectetur qui Lorem fugiat quis laboris consectetur aliqua est ea sit mollit labore. Cillum quis id magna veniam ut aliqua dolor. Aute ad et exercitation adipisicing nulla ullamco anim commodo. Enim laboris amet eiusmod laborum consectetur voluptate irure nulla consectetur. Exercitation nostrud aute est dolor velit tempor.\r\n",
+    "registered": "2016-04-05T08:16:45 -09:00",
+    "latitude": -67.060363,
+    "longitude": 69.399595,
+    "tags": [
+      "sint",
+      "officia",
+      "Lorem",
+      "Lorem",
+      "elit",
+      "cupidatat",
+      "nisi"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Carmen Bowers"
+      },
+      {
+        "id": 1,
+        "name": "Jocelyn Brooks"
+      },
+      {
+        "id": 2,
+        "name": "Effie Mclean"
+      }
+    ],
+    "greeting": "Hello, June Banks! You have 2 unread messages.",
+    "favoriteFruit": "strawberry"
+  },
+  {
+    "_id": "5f363da2342da56715b22e8e",
+    "index": 5,
+    "guid": "bc6cbeb1-65e9-403a-8c66-08ccc9327207",
+    "isActive": false,
+    "balance": "$2,433.15",
+    "picture": "http://placehold.it/32x32",
+    "age": 40,
+    "eyeColor": "green",
+    "name": "Denise Emerson",
+    "gender": "female",
+    "company": "TERRASYS",
+    "email": "deniseemerson@terrasys.com",
+    "phone": "+1 (889) 456-3566",
+    "address": "757 Pulaski Street, Catherine, Louisiana, 1448",
+    "about": "Pariatur occaecat aliqua ullamco minim adipisicing incididunt. Qui velit commodo ad dolor nostrud incididunt elit eiusmod officia officia laboris id. Pariatur veniam deserunt fugiat anim elit ullamco duis est reprehenderit aliqua reprehenderit. Consectetur aliqua sunt nisi duis ipsum ea incididunt consectetur sit elit in ad ipsum. Ut Lorem nulla consectetur dolore do sit. Ipsum tempor reprehenderit adipisicing minim et qui laborum ut cupidatat proident sint voluptate culpa Lorem.\r\n",
+    "registered": "2015-01-16T02:05:33 -09:00",
+    "latitude": 40.754944,
+    "longitude": 9.672822,
+    "tags": [
+      "ad",
+      "velit",
+      "quis",
+      "reprehenderit",
+      "non",
+      "ut",
+      "cupidatat"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Mullen Dillon"
+      },
+      {
+        "id": 1,
+        "name": "Glenda Simmons"
+      },
+      {
+        "id": 2,
+        "name": "Alston Cote"
+      }
+    ],
+    "greeting": "Hello, Denise Emerson! You have 10 unread messages.",
+    "favoriteFruit": "apple"
+  },
+  {
+    "_id": "5f363da25723eb519cbbb961",
+    "index": 6,
+    "guid": "f48e2755-300f-45fc-a9ae-0dee085f7100",
+    "isActive": true,
+    "balance": "$2,821.42",
+    "picture": "http://placehold.it/32x32",
+    "age": 30,
+    "eyeColor": "blue",
+    "name": "Felecia Watson",
+    "gender": "female",
+    "company": "BUZZOPIA",
+    "email": "feleciawatson@buzzopia.com",
+    "phone": "+1 (889) 488-3404",
+    "address": "415 Maple Avenue, Tetherow, Arizona, 6287",
+    "about": "Excepteur reprehenderit eu qui nisi reprehenderit amet. Mollit cillum enim consequat anim id occaecat consectetur non tempor deserunt et aliqua. Cillum incididunt magna fugiat excepteur dolor commodo consectetur ad.\r\n",
+    "registered": "2020-05-20T10:09:09 -09:00",
+    "latitude": 80.634178,
+    "longitude": -21.092014,
+    "tags": [
+      "sit",
+      "proident",
+      "incididunt",
+      "voluptate",
+      "labore",
+      "laborum",
+      "ut"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Evans Roth"
+      },
+      {
+        "id": 1,
+        "name": "Kristi Fuller"
+      },
+      {
+        "id": 2,
+        "name": "Battle Burns"
+      }
+    ],
+    "greeting": "Hello, Felecia Watson! You have 4 unread messages.",
+    "favoriteFruit": "strawberry"
+  },
+  {
+    "_id": "5f363da23ce3f8231385a619",
+    "index": 7,
+    "guid": "eac80bc6-88bd-4767-941b-d99c2aff3c31",
+    "isActive": false,
+    "balance": "$1,393.40",
+    "picture": "http://placehold.it/32x32",
+    "age": 27,
+    "eyeColor": "blue",
+    "name": "Daniel Tanner",
+    "gender": "male",
+    "company": "KOG",
+    "email": "danieltanner@kog.com",
+    "phone": "+1 (867) 408-2639",
+    "address": "893 Troutman Street, Salix, Federated States Of Micronesia, 7414",
+    "about": "Est ea anim aliquip aliqua laborum laboris cillum. Qui nulla consectetur dolore pariatur magna sint. Labore est non cillum commodo do dolore eiusmod mollit Lorem dolore dolor. Voluptate incididunt mollit dolor in. Deserunt proident laboris ut anim aliqua. Duis in ex nisi dolor minim incididunt esse pariatur Lorem sit sunt.\r\n",
+    "registered": "2014-05-24T06:49:05 -09:00",
+    "latitude": -5.125475,
+    "longitude": -122.921934,
+    "tags": [
+      "proident",
+      "aute",
+      "eu",
+      "eu",
+      "elit",
+      "eiusmod",
+      "in"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "James Shaw"
+      },
+      {
+        "id": 1,
+        "name": "Brittney Schroeder"
+      },
+      {
+        "id": 2,
+        "name": "Blackwell Horne"
+      }
+    ],
+    "greeting": "Hello, Daniel Tanner! You have 8 unread messages.",
+    "favoriteFruit": "apple"
+  },
+  {
+    "_id": "5f363da2967a5f04603b571e",
+    "index": 8,
+    "guid": "4ac6bd53-570b-4faf-8093-67e635331bd7",
+    "isActive": false,
+    "balance": "$1,576.35",
+    "picture": "http://placehold.it/32x32",
+    "age": 25,
+    "eyeColor": "green",
+    "name": "Luisa Newton",
+    "gender": "female",
+    "company": "BALOOBA",
+    "email": "luisanewton@balooba.com",
+    "phone": "+1 (816) 502-3458",
+    "address": "488 Gates Avenue, Caspar, West Virginia, 8145",
+    "about": "Excepteur ad eiusmod elit exercitation aliqua non excepteur sit nisi laboris ex dolore magna. Ex pariatur dolor ea ex est ad occaecat aliqua incididunt id. Voluptate esse ea deserunt labore reprehenderit ipsum. Sit ipsum nisi mollit do consectetur do ullamco esse ipsum aliquip occaecat dolore exercitation. Do nisi deserunt sit esse adipisicing incididunt nisi est enim sunt. Proident ad pariatur mollit do Lorem sit aliqua ad.\r\n",
+    "registered": "2014-03-03T04:56:55 -09:00",
+    "latitude": -40.847979,
+    "longitude": 44.854339,
+    "tags": [
+      "adipisicing",
+      "voluptate",
+      "consectetur",
+      "velit",
+      "nisi",
+      "occaecat",
+      "cillum"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Amelia Mcclain"
+      },
+      {
+        "id": 1,
+        "name": "Barker Sheppard"
+      },
+      {
+        "id": 2,
+        "name": "Lang Whitley"
+      }
+    ],
+    "greeting": "Hello, Luisa Newton! You have 8 unread messages.",
+    "favoriteFruit": "apple"
+  },
+  {
+    "_id": "5f363da2999afc9e1dd4923f",
+    "index": 9,
+    "guid": "afa5a740-a1a2-4e82-bf01-f8d8f136698f",
+    "isActive": false,
+    "balance": "$2,514.98",
+    "picture": "http://placehold.it/32x32",
+    "age": 32,
+    "eyeColor": "brown",
+    "name": "Weiss Holmes",
+    "gender": "male",
+    "company": "ZIDOX",
+    "email": "weissholmes@zidox.com",
+    "phone": "+1 (941) 436-2380",
+    "address": "528 Chester Avenue, Groton, New Jersey, 399",
+    "about": "Ea dolore eiusmod ut aute dolor deserunt elit quis eu officia voluptate. Non voluptate ad non sint consequat voluptate anim mollit. Cupidatat duis amet minim id. Id velit ad sunt sit sunt cupidatat magna nostrud.\r\n",
+    "registered": "2016-09-15T03:58:39 -09:00",
+    "latitude": -20.295874,
+    "longitude": -134.371456,
+    "tags": [
+      "cillum",
+      "laborum",
+      "tempor",
+      "eiusmod",
+      "ut",
+      "amet",
+      "mollit"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Elena Terrell"
+      },
+      {
+        "id": 1,
+        "name": "Jimmie Taylor"
+      },
+      {
+        "id": 2,
+        "name": "Tara Bender"
+      }
+    ],
+    "greeting": "Hello, Weiss Holmes! You have 10 unread messages.",
+    "favoriteFruit": "apple"
+  }
+];
+
+    function sort(key) {
+      let sortedData = jsonData.sort((a, b) => (
+        a[key] < b[key] ? -1 : (a[key] > b[key] ? 1 : 0)
+      ));
+      renderTable(sortedData);
+    }
+
+    function renderTable(data) {
+      let tableBodyData = [];
+      for (var variable of data) {
+        tableBodyData.push(`
+          <tr>
+            <td>${variable._id}</td>
+            <td>${variable.name}</td>
+            <td>${variable.age}</td>
+            <td>${variable.eyeColor}</td>
+            <td>${variable.gender}</td>
+            <td>${variable.email}</td>
+            <td>${JSON.stringify(variable.phone)}</td>
+          </tr>
+          `);
+      }
+      document.querySelector('#renderingDataTable > tbody').innerHTML = tableBodyData.join('');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  .box {
+    width: 200%;
+    height: 100px;
+    margin: 10px;
+    border: 3px solid black;
+  }
+  .input-check:checked ~ .box {
+    background: #fff000;
+  }
+  </style>
+</head>
+<body>
+  <input type="checkbox" class="input-check" id="input-check">
+  <label for="input-check">동의합니다.</label>
+  <div class="box">BOX</div>
+  <div class="container">
+    <div class="box">BOX</div>
+  </div>
+  <div class="box">BOX</div>
+</body>
+</html>

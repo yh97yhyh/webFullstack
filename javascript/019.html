@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+     //for
+     // for (var i = 0; i < 10; i++) {
+     //   document.write(i, '<br>');
+     // }
+     //
+     // let s = 0;
+     // for (var i = 0; i < 101; i++) {
+     //   s+=i;
+     // }
+     // document.write(s, '<br>');
+
+  let array = [10, 20, 30, 40, 50];
+  for (var i = 0; i < array.length; i++) {
+    document.write(array[i], '<br>');
+  }
+
+  array.forEach(e => console.log(e*3));
+
+  for (var variable in array) {
+    document.write(array[variable], '<br>');
+  } //array의 index
+
+  for (var variable of array) {
+    document.write(variable, '!! <br>');
+  } //array의 요소
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let txt = 'ABCDEFGHIJKAB';
+
+    //특정 문자열을 포함하고 있느냐
+    document.write(txt.includes('ABC'), '<br>');
+    document.write(txt.startsWith('ABC'), '<br>');
+    document.write(txt.endsWith('JK'), '<br>');
+
+    document.write(txt.indexOf('AB', 2), '<br>'); //두 번째에도 있냐
+  </script>
+</body>
+</html>

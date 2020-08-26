@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 연습문제 1
+    let str = '5,10,15,20,25';
+    let splitStr = str.split(',');
+    let sum = 0;
+    for (var variable of splitStr) {
+      sum += parseInt(variable);
+    }
+    let avg = sum / splitStr.length;
+    document.write(avg, '<br>');
+
+    //연습문제2
+    let arr = [11, 22, 33, 111, 2];
+    let s = [11, 22, 33, 111, 2].join('');
+    let sum2 = 0;
+    for (var variable of s) {
+      sum2 += parseInt(variable);
+    }
+    document.write(sum2, '<br>');
+  </script>
+</body>
+</html>

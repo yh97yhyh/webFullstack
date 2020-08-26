@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //array
+    let 과일 = ['사과', '수박', '복숭아', '딸기', '바나나'];
+    let 과일선물 = ['체리', '멜론'];
+    // let 과일 = new Array(5);
+    // let 과일 = new Array('사과', '수박', '복숭아', '딸기', '바나나');
+
+    // document.write(`${과일} <br>`);
+    // document.write(`${과일[0]} <br>`);
+    // document.write(`${과일[2]} <br>`);
+
+    //array의 내장함수
+    document.write(`과일 : ${과일} <br>`);
+    let 꺼낸과일 = 과일.pop();
+    document.write(`과일.pop() : ${꺼낸과일} <br>`);
+    document.write(`과일 : ${과일} <br>`);
+    과일.push(꺼낸과일);
+    document.write(`과일 : ${과일} <br>`);
+
+    document.write(`----------------------------- <br>`);
+
+    let 문자열 = 과일.toString();
+    document.write(`과일.toString() : ${문자열} <br>`);
+    document.write(`과일.toString()[1] : ${문자열[1]} <br>`);
+    document.write(`과일.join('!!') : ${과일.join('*')} <br>`); //join되면 문자열로 바뀜
+
+    document.write(`과일.shift() : ${과일.shift()} <br>`);
+    document.write(`과일.unshift('파파야') : ${과일.unshift('파파야'
+    )} <br>`);
+    document.write(`과일 : ${과일} <br>`);
+    과일.splice(1, 0, '한라봉');
+    document.write(`과일.splice(1, 0, '한라봉') : ${과일} <br>`); //(index값, 대체할요소의 수, 대체할 값)
+    document.write(`과일.slice(0,2) : ${과일.slice(0,2)} <br>`);
+    document.write(`과일.slice(1,3): ${과일.slice(1,3)} <br>`);
+    document.write(`과일.concat(과일선물): ${과일.concat(과일선물)} <br>`);
+    document.write(`과일 : ${과일} <br>`);
+    document.write(`과일.sort(): ${과일.sort()} <br>`); //사전식 정렬
+    document.write(`과일 : ${과일} <br>`);
+    document.write(`과일.reverse(): ${과일.reverse()} <br>`); //역정렬아니고 역순
+    document.write(`과일 : ${과일} <br>`);
+    document.write(`['1', '11', '2', '22'].sort(): ${['1', '11', '2', '22'].sort()} <br>`);
+    document.write(`['1', '11', '2', '22'].length: ${['1', '11', '2', '22'].length} <br>`);
+
+
+  </script>
+</body>
+</html>

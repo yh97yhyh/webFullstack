@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //string
+    let txt = 'ABCDEFGHIJK';
+    let txt_two = 'mom said \'hello wrold\'';
+
+    document.write(`txt : ${txt} <br>`);
+    document.write(`txt.length : ${txt.length} <br>`);
+    document.write(`txt[1] : ${txt[1]} <br>`);
+
+    document.write(`txt_two : ${txt_two} <br>`);
+
+    document.write(`txt.indexOf : ${txt.indexOf('F')} <br>`);
+    document.write(`txt.search : ${txt.search('FGH')} <br>`);
+    document.write(`txt.lastIndexOf : ${txt.lastIndexOf('Z')} <br>`);
+    document.write(`txt.slice(0, 3) : ${txt.slice(0, 3)} <br>`);
+    document.write(`txt.substring(0, 3) : ${txt.substring(0, 3)} <br>`);
+    document.write(`txt.substr(2, 5) : ${txt.substr(2, 5)} <br>`); //5개
+    document.write(`txt.replace('ABC', 'young') : ${txt.replace('ABC', 'young')} <br>`); //첫번째 ABC
+    document.write(`txt.replace(/ABC/g, 'young') : ${txt.replace(/ABC/g, 'young')} <br>`); //모든 ABC
+    document.write(`txt.toUpperCase() : ${txt.toUpperCase()} <br>`);
+    document.write(`txt.toLowerCase() : ${txt.toLowerCase()} <br>`);
+  </script>
+</body>
+</html>
